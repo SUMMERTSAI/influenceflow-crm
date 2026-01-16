@@ -118,35 +118,35 @@ const App: React.FC = () => {
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${activeTab === 'pipeline' ? 'bg-indigo-50 text-indigo-700 shadow-sm' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800'}`}
           >
             <LayoutDashboard size={20} />
-            <span className="font-medium">Pipeline Board</span>
+            <span className="font-medium">合作看板</span>
           </button>
           <button 
             onClick={() => setActiveTab('influencers')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${activeTab === 'influencers' ? 'bg-indigo-50 text-indigo-700 shadow-sm' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800'}`}
           >
             <Users size={20} />
-            <span className="font-medium">Influencers</span>
+            <span className="font-medium">網紅名單</span>
           </button>
           <button 
             onClick={() => setActiveTab('reports')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${activeTab === 'reports' ? 'bg-indigo-50 text-indigo-700 shadow-sm' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800'}`}
           >
             <TrendingUp size={20} />
-            <span className="font-medium">Performance</span>
+            <span className="font-medium">成效報告</span>
           </button>
         </nav>
 
         <div className="p-4 border-t border-slate-100 space-y-4">
           <div className="bg-slate-50 rounded-xl p-3">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Current Activity</p>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">目前活動</p>
             <div className="flex items-center justify-between text-sm">
-              <span className="text-slate-600">Total Budget</span>
+              <span className="text-slate-600">總預算</span>
               <span className="font-bold text-indigo-600">${campaigns.reduce((acc, c) => acc + c.budget, 0).toLocaleString()}</span>
             </div>
           </div>
           <button className="w-full flex items-center gap-3 px-4 py-2 text-slate-400 hover:text-red-500 transition-colors">
             <LogOut size={18} />
-            <span className="text-sm font-medium">Log out</span>
+            <span className="text-sm font-medium">登出</span>
           </button>
         </div>
       </aside>
@@ -156,11 +156,11 @@ const App: React.FC = () => {
         <header className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-slate-900">
-              {activeTab === 'pipeline' && 'Collaboration Pipeline'}
-              {activeTab === 'influencers' && 'Influencer Directory'}
-              {activeTab === 'reports' && 'Campaign Performance'}
+              {activeTab === 'pipeline' && '合作進度看板'}
+              {activeTab === 'influencers' && '網紅資料庫'}
+              {activeTab === 'reports' && '活動成效報告'}
             </h1>
-            <p className="text-slate-500 mt-1">Manage your creator relationships and track campaign ROI.</p>
+            <p className="text-slate-500 mt-1">管理創作者合作關係，追蹤活動投資報酬率</p>
           </div>
           <div className="flex items-center gap-3">
             <button 
@@ -171,7 +171,7 @@ const App: React.FC = () => {
               className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-semibold transition-all shadow-md shadow-indigo-100"
             >
               <Plus size={18} />
-              New Collaboration
+              新增合作
             </button>
           </div>
         </header>
@@ -190,7 +190,7 @@ const App: React.FC = () => {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input 
                   type="text" 
-                  placeholder="Search handles..." 
+                  placeholder="搜尋帳號名稱..." 
                   className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -203,7 +203,7 @@ const App: React.FC = () => {
                   value={selectedTag || ''}
                   onChange={(e) => setSelectedTag(e.target.value || null)}
                 >
-                  <option value="">All Categories</option>
+                  <option value="">全部類別</option>
                   {allTags.map(tag => (
                     <option key={tag} value={tag}>{tag}</option>
                   ))}

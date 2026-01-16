@@ -26,7 +26,7 @@ const PerformanceForm: React.FC<PerformanceFormProps> = ({ onClose, onSave }) =>
         <div className="bg-emerald-600 p-6 flex justify-between items-center text-white">
           <div className="flex items-center gap-3">
             <BarChart3 size={24} />
-            <h2 className="text-xl font-bold">Post Metrics</h2>
+            <h2 className="text-xl font-bold">貼文成效數據</h2>
           </div>
           <button onClick={onClose} className="hover:bg-emerald-500 p-1 rounded-full transition-colors">
             <X size={20} />
@@ -36,7 +36,7 @@ const PerformanceForm: React.FC<PerformanceFormProps> = ({ onClose, onSave }) =>
         <form onSubmit={handleSubmit} className="p-8 space-y-6">
           <div className="grid grid-cols-1 gap-4">
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">Likes</label>
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">按讚數</label>
               <div className="relative">
                 <Heart className="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500" size={18} />
                 <input 
@@ -49,7 +49,7 @@ const PerformanceForm: React.FC<PerformanceFormProps> = ({ onClose, onSave }) =>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">Comments</label>
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">留言數</label>
               <div className="relative">
                 <MessageSquare className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-500" size={18} />
                 <input 
@@ -62,7 +62,7 @@ const PerformanceForm: React.FC<PerformanceFormProps> = ({ onClose, onSave }) =>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">Sales Generated</label>
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">帶來銷售數</label>
               <div className="relative">
                 <ShoppingBag className="absolute left-3 top-1/2 -translate-y-1/2 text-amber-500" size={18} />
                 <input 
@@ -81,13 +81,13 @@ const PerformanceForm: React.FC<PerformanceFormProps> = ({ onClose, onSave }) =>
               onClick={onClose}
               className="flex-1 px-6 py-3 border border-slate-200 rounded-xl font-bold text-slate-600 hover:bg-slate-50 transition-colors"
             >
-              Discard
+              捨棄
             </button>
             <button 
               type="submit"
               className="flex-1 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-lg shadow-emerald-100 transition-all"
             >
-              Save Results
+              儲存成效
             </button>
           </div>
         </form>

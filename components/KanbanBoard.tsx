@@ -89,7 +89,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ collabs, onUpdateStatus }) =>
                       onClick={() => handleStatusShift(item)}
                       className="text-indigo-600 hover:text-indigo-800 p-1.5 rounded-lg hover:bg-indigo-50 transition-all flex items-center gap-1 text-xs font-bold uppercase tracking-widest"
                     >
-                      Next <ArrowRight size={14} />
+                      下一步 <ArrowRight size={14} />
                     </button>
                   )}
                 </div>

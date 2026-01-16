@@ -7,10 +7,10 @@ export enum Platform {
 }
 
 export enum CollabStatus {
-  CONTACTED = 'Contacted',
-  SAMPLE_SENT = 'Sample Sent',
-  POST_LIVE = 'Post Live',
-  PAID = 'Paid'
+  CONTACTED = '已聯繫',
+  SAMPLE_SENT = '已寄樣品',
+  POST_LIVE = '貼文上線',
+  PAID = '已付款'
 }
 
 export interface Influencer {
@@ -32,7 +32,7 @@ export interface Campaign {
 export interface Logistics {
   product: string;
   trackingNo: string;
-  deliveryStatus: 'Pending' | 'In Transit' | 'Delivered';
+  deliveryStatus: '待處理' | '運送中' | '已送達';
 }
 
 export interface Metrics {

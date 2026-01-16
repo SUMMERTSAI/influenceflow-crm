@@ -12,7 +12,7 @@ const LogisticsForm: React.FC<LogisticsFormProps> = ({ onClose, onSave }) => {
   const [formData, setFormData] = useState<Logistics>({
     product: '',
     trackingNo: '',
-    deliveryStatus: 'Pending'
+    deliveryStatus: '待處理'
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,7 +27,7 @@ const LogisticsForm: React.FC<LogisticsFormProps> = ({ onClose, onSave }) => {
         <div className="bg-indigo-600 p-6 flex justify-between items-center text-white">
           <div className="flex items-center gap-3">
             <Package size={24} />
-            <h2 className="text-xl font-bold">Shipping Details</h2>
+            <h2 className="text-xl font-bold">寄送資訊</h2>
           </div>
           <button onClick={onClose} className="hover:bg-indigo-500 p-1 rounded-full transition-colors">
             <X size={20} />
@@ -37,14 +37,14 @@ const LogisticsForm: React.FC<LogisticsFormProps> = ({ onClose, onSave }) => {
         <form onSubmit={handleSubmit} className="p-8 space-y-6">
           <div className="space-y-4">
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">Product Name *</label>
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">產品名稱 *</label>
               <div className="relative">
                 <Truck className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input 
                   required
                   type="text" 
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
-                  placeholder="E.g. Summer Collection Gift Set"
+                  placeholder="例如：夏季新品禮盒組"
                   value={formData.product}
                   onChange={e => setFormData({ ...formData, product: e.target.value })}
                 />
@@ -52,14 +52,14 @@ const LogisticsForm: React.FC<LogisticsFormProps> = ({ onClose, onSave }) => {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">Tracking Number *</label>
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">追蹤編號 *</label>
               <div className="relative">
                 <Hash className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input 
                   required
                   type="text" 
                   className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all font-mono"
-                  placeholder="UPS1234567890"
+                  placeholder="黑貓1234567890"
                   value={formData.trackingNo}
                   onChange={e => setFormData({ ...formData, trackingNo: e.target.value })}
                 />
@@ -67,15 +67,15 @@ const LogisticsForm: React.FC<LogisticsFormProps> = ({ onClose, onSave }) => {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">Current Status</label>
+              <label className="text-sm font-bold text-slate-700 uppercase tracking-wider ml-1">目前狀態</label>
               <select 
                 className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
                 value={formData.deliveryStatus}
                 onChange={e => setFormData({ ...formData, deliveryStatus: e.target.value as any })}
               >
-                <option value="Pending">Pending</option>
-                <option value="In Transit">In Transit</option>
-                <option value="Delivered">Delivered</option>
+                <option value="待處理">待處理</option>
+                <option value="運送中">運送中</option>
+                <option value="已送達">已送達</option>
               </select>
             </div>
           </div>
@@ -86,13 +86,13 @@ const LogisticsForm: React.FC<LogisticsFormProps> = ({ onClose, onSave }) => {
               onClick={onClose}
               className="flex-1 px-6 py-3 border border-slate-200 rounded-xl font-bold text-slate-600 hover:bg-slate-50 transition-colors"
             >
-              Cancel
+              取消
             </button>
             <button 
               type="submit"
               className="flex-1 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold shadow-lg shadow-indigo-100 transition-all"
             >
-              Update Logistics
+              更新物流資訊
             </button>
           </div>
         </form>

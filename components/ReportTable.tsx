@@ -27,10 +27,10 @@ const ReportTable: React.FC<ReportTableProps> = ({ collabs }) => {
       {/* Stats Overview */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {[
-          { label: 'Total Sales', val: collabs.reduce((acc, c) => acc + (c.metrics?.sales || 0), 0), icon: <ShoppingBag size={20} />, color: 'amber' },
-          { label: 'Total Likes', val: collabs.reduce((acc, c) => acc + (c.metrics?.likes || 0), 0).toLocaleString(), icon: <Heart size={20} />, color: 'pink' },
-          { label: 'Avg CPE', val: '$' + (collabs.filter(c => c.metrics).reduce((acc, c) => acc + calculateCPE(c), 0) / (collabs.filter(c => c.metrics).length || 1)).toFixed(2), icon: <DollarSign size={20} />, color: 'indigo' },
-          { label: 'Total Reach', val: collabs.reduce((acc, c) => acc + c.influencer.followers, 0).toLocaleString(), icon: <Users size={20} />, color: 'blue' }
+          { label: '總銷售數', val: collabs.reduce((acc, c) => acc + (c.metrics?.sales || 0), 0), icon: <ShoppingBag size={20} />, color: 'amber' },
+          { label: '總按讚數', val: collabs.reduce((acc, c) => acc + (c.metrics?.likes || 0), 0).toLocaleString(), icon: <Heart size={20} />, color: 'pink' },
+          { label: '平均互動成本', val: '$' + (collabs.filter(c => c.metrics).reduce((acc, c) => acc + calculateCPE(c), 0) / (collabs.filter(c => c.metrics).length || 1)).toFixed(2), icon: <DollarSign size={20} />, color: 'indigo' },
+          { label: '總觸及人數', val: collabs.reduce((acc, c) => acc + c.influencer.followers, 0).toLocaleString(), icon: <Users size={20} />, color: 'blue' }
         ].map(stat => (
           <div key={stat.label} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
             <div className={`p-3 rounded-xl bg-${stat.color}-50 text-${stat.color}-600`}>
@@ -48,7 +48,7 @@ const ReportTable: React.FC<ReportTableProps> = ({ collabs }) => {
         <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
           <div className="flex items-center gap-2">
             <Activity className="text-indigo-600" size={20} />
-            <h2 className="font-bold text-lg text-slate-800">Campaign Performance Log</h2>
+            <h2 className="font-bold text-lg text-slate-800">活動成效紀錄</h2>
           </div>
         </div>
 
@@ -56,13 +56,13 @@ const ReportTable: React.FC<ReportTableProps> = ({ collabs }) => {
           <table className="w-full text-left">
             <thead>
               <tr className="border-b border-slate-100 text-[11px] font-bold text-slate-400 uppercase tracking-widest bg-slate-50/30">
-                <th className="px-6 py-4">Influencer</th>
-                <th className="px-6 py-4">Campaign</th>
-                <th className="px-6 py-4 text-center">Interactions</th>
-                <th className="px-6 py-4 text-center">CPE (Cost/Int)</th>
-                <th className="px-6 py-4 text-center">Sales</th>
-                <th className="px-6 py-4 text-center">ROI</th>
-                <th className="px-6 py-4 text-right">Cost</th>
+                <th className="px-6 py-4">網紅</th>
+                <th className="px-6 py-4">活動</th>
+                <th className="px-6 py-4 text-center">互動數</th>
+                <th className="px-6 py-4 text-center">互動成本</th>
+                <th className="px-6 py-4 text-center">銷售數</th>
+                <th className="px-6 py-4 text-center">投報率</th>
+                <th className="px-6 py-4 text-right">費用</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -112,7 +112,7 @@ const ReportTable: React.FC<ReportTableProps> = ({ collabs }) => {
           {collabs.length === 0 && (
             <div className="p-20 text-center flex flex-col items-center gap-3">
               <BarChart2 size={48} className="text-slate-200" />
-              <p className="text-slate-400 font-medium">No performance data available yet.</p>
+              <p className="text-slate-400 font-medium">目前尚無成效資料</p>
             </div>
           )}
         </div>

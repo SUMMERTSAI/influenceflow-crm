@@ -43,7 +43,7 @@ const InfluencerGrid: React.FC<InfluencerGridProps> = ({ influencers }) => {
                   <Users size={16} className="text-slate-400" />
                   {formatFollowers(inf.followers)}
                 </div>
-                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Followers</span>
+                <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">粉絲數</span>
               </div>
             </div>
 
@@ -65,7 +65,7 @@ const InfluencerGrid: React.FC<InfluencerGridProps> = ({ influencers }) => {
 
             <div className="mt-6 pt-4 border-t border-slate-100 flex gap-2">
               <button className="flex-1 bg-slate-900 hover:bg-black text-white py-2 rounded-xl text-sm font-semibold transition-colors">
-                View Profile
+                查看檔案
               </button>
               <button className="px-3 py-2 border border-slate-200 hover:bg-slate-50 text-slate-600 rounded-xl transition-colors">
                 <ExternalLink size={18} />
