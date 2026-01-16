@@ -1,0 +1,10 @@
+name = "influenceflow-crm"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+[vars]
+# 這裡不要放 API key，請在 Cloudflare Dashboard 設置秘密變數
+
+# 本地開發設置
+[dev]
+port = 8788
